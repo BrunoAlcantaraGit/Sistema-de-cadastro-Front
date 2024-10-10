@@ -1,0 +1,19 @@
+.herder{
+    display: flex;
+    align-items: center;
+    background-color: aqua;
+}
+.logo{
+    display: block;
+    width: 50px;
+}
+.title-group, i{
+padding-left: 8px;
+display: flex;
+align-items: center;
+}
+
+img{
+
+   max-width: 40px;
+}
