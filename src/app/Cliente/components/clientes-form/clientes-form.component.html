@@ -4,18 +4,18 @@
         <input matInput placeholder="Nome" formControlName='nome'>
     </mat-form-field>
     
-    <mat-form-field>
+    <!--<mat-form-field>
         <input matInput placeholder="Email" formControlName='email'>
-    </mat-form-field>
+    </mat-form-field>-->
     
     <mat-form-field>
         <input matInput placeholder="Documento" formControlName='documento'>
     </mat-form-field>
     
-    <mat-form-field>
+   <!-- <mat-form-field>
         <input matInput placeholder="Data de Nascimento" type="date" formControlName='dataNascimento'>
     </mat-form-field>
-    </div>
+    </div>-->
     
     <div formGroupName="contato">
         <mat-form-field>
@@ -53,7 +53,7 @@
         </mat-form-field>
     </div>
     
-    </form>
+   
 
     <button mat-raised-button color ="primary" [disabled] = '!this.form.valid' (click)="onSubmit()">
         {{btnText}}

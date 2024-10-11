@@ -1,9 +1,7 @@
 export interface Cliente{
   id?: number,
   nome:string,
-  email:string,
   documento:string,
-  dataNascimento:string,
   contato: Contato,
   endereco: Endereco  
 }
@@ -14,10 +12,11 @@ export interface Contato{
 }
 
 export interface Endereco{
-    rua: string,
+  logradouro: string,
     numero: string,
     cep:string,
     bairro:string,
     cidade: string,
-    uf:string
+    uf:string,
+    ibge: string
 }

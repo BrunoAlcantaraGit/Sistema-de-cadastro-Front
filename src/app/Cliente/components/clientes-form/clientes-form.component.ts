@@ -28,10 +28,9 @@ export class ClientesFormComponent  implements OnInit{
   }
   criarForm(): void{
     this.form = this.formBuilder.group({
-      nome:[this.cliente ? this.cliente.nome : '', [Validators.required]],
-      email:[this.cliente ? this.cliente.email : '', [Validators.required]],
+      nome:[this.cliente ? this.cliente.nome : '', ],
       documento:[this.cliente ? this.cliente.documento : '', [Validators.required]],
-      dataNascimento:[this.cliente ? this.cliente.dataNascimento : '', [Validators.required]],
+      
       
       contato: this.formBuilder.group({
         ddd:[this.cliente ? this.cliente.contato?.ddd:''],
@@ -40,7 +39,7 @@ export class ClientesFormComponent  implements OnInit{
       }),
 
         endereco:this.formBuilder.group({
-        rua:[this.cliente ? this.cliente.endereco ?.rua: ''],
+        rua:[this.cliente ? this.cliente.endereco ?.logradouro: ''],
         numero:[this.cliente ? this.cliente.endereco?.numero : ''],
         cep:[this.cliente ? this.cliente.endereco?.cep: ''],
         bairro:[this.cliente ? this.cliente.endereco?.bairro: ''],
