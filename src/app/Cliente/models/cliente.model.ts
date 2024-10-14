@@ -8,7 +8,7 @@ export interface Cliente{
 
 export interface Contato{
     ddd:string,
-    telefone:string,
+    numeroTelefone:string,
 }
 
 export interface Endereco{
@@ -16,7 +16,7 @@ export interface Endereco{
     numero: string,
     cep:string,
     bairro:string,
-    cidade: string,
+    localidade: string,
     uf:string,
     ibge: string
 }

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Cliente } from '../models/cliente.model';
+import { Cliente, Endereco } from '../models/cliente.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ClienteService {
 url='http://localhost:8080/cliente'
+enderecoUrl='http://localhost:8080/endereco'
   
 constructor(private http:HttpClient) {}
 
@@ -19,7 +20,7 @@ listarPorId(id: number):Observable<Cliente>{
   return this.http.get<Cliente>(`${this.url}/${id}`)
 }
 salvar(cliente : Cliente){
-  //return this.http.post<Cliente>(this.url,cliente)
+  
   return this.http.post<Cliente>(this.url + "/salvar", cliente);
 
 }
@@ -30,5 +31,11 @@ atualiar(id: number,Cliente:Cliente){
 deletar(id:number){
   return this.http.delete(`${this.url}/${id}`)
 }
+
+buscarEndereco(cep :string){
+  return this.http.get<Endereco>(`${this.enderecoUrl}/buscar-cep/${cep}`)
+
 }
 
+
+}
