@@ -9,7 +9,7 @@ export const CONFIG:NavData[] = [
     },
 
     {
-        routeURL:'/restaurantes',
+        routeURL:'/veiculo',
         icon:'local_shipping',
         title:'Veiculo'
     },

@@ -19,6 +19,10 @@ constructor(private router: Router,
    ){
 this.btnEditar = "Atualizar"
 }
+
+
+
+
   ngOnInit(): void {
    this.id = Number(this.activateRoute.snapshot.paramMap.get('id'))
    this.listarPorId(this.id);

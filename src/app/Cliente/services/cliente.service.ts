@@ -13,11 +13,11 @@ enderecoUrl='http://localhost:8080/endereco'
 constructor(private http:HttpClient) {}
 
 listar():Observable<Cliente[]>{
-   return this.http.get<Cliente[]>(this.url)
+   return this.http.get<Cliente[]>(`${this.url}/listar`)
 }
 
 listarPorId(id: number):Observable<Cliente>{
-  return this.http.get<Cliente>(`${this.url}/${id}`)
+  return this.http.get<Cliente>(`${this.url}/buscar/${id}`)
 }
 salvar(cliente : Cliente){
   
@@ -26,8 +26,9 @@ salvar(cliente : Cliente){
 }
 
 atualiar(id: number,Cliente:Cliente){
-  return this.http.put<Cliente>(`${this.url}/${id}`,Cliente)
+  return this.http.put<Cliente>(`${this.url}/editar/${id}`,Cliente)
 }
+
 deletar(id:number){
   return this.http.delete(`${this.url}/${id}`)
 }
