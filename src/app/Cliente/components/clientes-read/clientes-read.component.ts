@@ -27,10 +27,12 @@ export class ClientesReadComponent implements OnInit {
     
     )
   }
-  deletar(id:number):void{
-    this.clienteService.deletar(id).subscribe(()=> {
-      this.listar();
-    })
-  }
+
+    deletar(id: number): void {
+      this.clienteService.deletar(id).subscribe(() => {
+        // Remover o cliente deletado do array de clientes
+        this.clientes = this.clientes.filter(cliente => cliente.id !== id);
+      });
+    }
 
 }

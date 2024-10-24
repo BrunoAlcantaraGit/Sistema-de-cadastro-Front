@@ -25,12 +25,12 @@ salvar(cliente : Cliente){
 
 }
 
-atualiar(id: number,Cliente:Cliente){
+atualizar(id:number,Cliente:Cliente){
   return this.http.put<Cliente>(`${this.url}/editar/${id}`,Cliente)
 }
 
 deletar(id:number){
-  return this.http.delete(`${this.url}/${id}`)
+  return this.http.delete(`${this.url}/deletar/${id}`)
 }
 
 buscarEndereco(cep :string){

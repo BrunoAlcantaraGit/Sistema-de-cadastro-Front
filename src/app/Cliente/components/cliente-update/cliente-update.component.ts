@@ -34,7 +34,7 @@ this.btnEditar = "Atualizar"
     })
   }
   atualizarCliente(cliente: Cliente){
-      this.clienteService.atualiar(this.id, cliente).subscribe(()=>{
+      this.clienteService.atualizar(this.id, cliente).subscribe(()=>{
       this.router.navigate(['/clientes']);
     })
   }
