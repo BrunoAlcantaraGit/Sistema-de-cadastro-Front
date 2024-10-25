@@ -4,7 +4,7 @@ import { NavData } from "../../models/navData.models";
 export const CONFIG:NavData[] = [
     {
         routeURL:'/clientes',
-        icon:'person',
+        icon:'account_circle',
         title: 'Clientes'
     },
 
