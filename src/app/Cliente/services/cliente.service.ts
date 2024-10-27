@@ -19,8 +19,7 @@ listar():Observable<Cliente[]>{
 listarPorId(id: number):Observable<Cliente>{
   return this.http.get<Cliente>(`${this.url}/buscar/${id}`)
 }
-salvar(cliente : Cliente){
-  
+salvar(cliente : Cliente): Observable<Cliente>{
   return this.http.post<Cliente>(this.url + "/salvar", cliente);
 
 }

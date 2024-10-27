@@ -29,8 +29,9 @@ export class ClientesFormComponent implements OnInit {
     this.listenToCepChanges();
   }
 
-  criarForm(): void {
+  criarForm():void{
     this.form = this.formBuilder.group({
+     
       nome: [this.cliente ? this.cliente.nome : '',],
       documento: [this.cliente ? this.cliente.documento : '', [Validators.required]],
       
@@ -69,8 +70,10 @@ export class ClientesFormComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit():void{
+   
     const clienteData: Cliente = {
+      id: this.form.value.id,
       nome: this.form.value.nome,
       documento: this.form.value.documento,
       contato: {  // Alterado para um objeto, não um array

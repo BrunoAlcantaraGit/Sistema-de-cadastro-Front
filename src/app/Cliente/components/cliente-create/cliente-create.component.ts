@@ -14,6 +14,7 @@ export class ClienteCreateComponent {
   constructor(private clienteSevice: ClienteService, private router: Router){}
 
   criarCliente(cliente:Cliente){
-    this.clienteSevice.salvar(cliente).subscribe(() =>{this.router.navigate(['/cliente'])})
+    //this.clienteSevice.salvar(cliente).subscribe(() =>{this.router.navigate(['/cliente'])})
+    this.clienteSevice.salvar(cliente).subscribe()
   }
 }
