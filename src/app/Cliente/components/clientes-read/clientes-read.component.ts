@@ -9,7 +9,8 @@ import { Cliente } from '../../models/cliente.model';
 })
 export class ClientesReadComponent implements OnInit {
  clientes!: Cliente[]
- 
+
+
   constructor(
     private clienteService: ClienteService
   ){}

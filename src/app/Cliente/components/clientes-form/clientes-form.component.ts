@@ -91,16 +91,18 @@ export class ClientesFormComponent implements OnInit {
       }
     };
    
-    console.log("Dados a serem enviados:", clienteData); // Exibe os dados que serão enviados
+    console.log("Dados a serem enviados:", clienteData);
     this.submit.emit(clienteData);
+  
     this.clienteService.salvar(clienteData).subscribe()
+    
   }
    
 
   onCancel() {
-    this.route.navigate(['/clientes']); // Navega de volta para a lista de clientes
-  }
-
+    this.route.navigate(['/clientes']);
   
  
+}
+
 }

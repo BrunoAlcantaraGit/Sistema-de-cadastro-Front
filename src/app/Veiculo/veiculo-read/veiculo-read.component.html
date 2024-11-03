@@ -1,1 +1,25 @@
-<p>veiculo-read works!</p>
+<table mat-table [dataSource]="veiculos">
+    ...
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="placa">
+        <th mat-header-cell *matHeaderCellDef> Placa </th>
+        <td mat-cell *matCellDef="let user"> {{user.placa}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="renavan">
+        <th mat-header-cell *matHeaderCellDef> Renavan </th>
+        <td mat-cell *matCellDef="let user"> {{user.renavan}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="tipoRodado">
+        <th mat-header-cell *matHeaderCellDef> TipoRodado </th>
+        <td mat-cell *matCellDef="let user"> {{user.tipoRodado}} </td>
+      </ng-container>
+
+  </table>

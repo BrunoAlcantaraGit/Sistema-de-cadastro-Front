@@ -36,6 +36,9 @@ buscarEndereco(cep :string){
   return this.http.get<Endereco>(`${this.enderecoUrl}/buscar-cep/${cep}`)
 
 }
+buscarClientePorDocumento(doc:string){
+return this.http.get<Cliente>(`${this.url}/buscar-por-documento/${doc}`)
+}
 
 
 }
