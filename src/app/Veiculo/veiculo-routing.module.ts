@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VeiculoComponent } from './veiculo/veiculo.component';
 import { VeiculoFormComponent } from './veiculo-form/veiculo-form.component';
 import { VeiculoReadComponent } from './veiculo-read/veiculo-read.component';
+import { VeiculoUpdateComponent } from './veiculo-update/veiculo-update.component';
 
 
 
@@ -19,7 +20,7 @@ const routes: Routes = [
 
   {
       path:'editar/:id',
-      component: VeiculoReadComponent
+      component: VeiculoUpdateComponent
   }
   ];
   

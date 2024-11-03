@@ -50,6 +50,7 @@ form!: FormGroup;
     };
    
     this.submit.emit(veiculoData);
+    console.log("Dados enviados", veiculoData)
     this.veiculoService.salvar(veiculoData).subscribe()
   }
 

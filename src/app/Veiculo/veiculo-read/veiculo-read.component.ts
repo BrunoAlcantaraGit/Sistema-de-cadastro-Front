@@ -13,7 +13,7 @@ export class VeiculoReadComponent {
   veiculos!: Veiculo[]
 
   constructor(
-    veiculoServive: VeiculoService
+   private  veiculoServive: VeiculoService
   ){}
 
   columnsToDisplay = ['id', 'placa', 'renavan', 'tipoRodado'];
@@ -25,8 +25,19 @@ export class VeiculoReadComponent {
 
 listar(){
 
+this.veiculoServive.listar().subscribe((sucesso)=>{
+  console.log(sucesso)
+  this.veiculos = sucesso
+
+})
+
 }
 
-
+deletar(id: number){
+  this.veiculoServive.deletar(id).subscribe(() => {
+    // Remover o cliente deletado do array de clientes
+    this.veiculos = this.veiculos.filter(veiculo => veiculo.id !== id);
+  });
+}
 
 }

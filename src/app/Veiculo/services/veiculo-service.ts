@@ -18,7 +18,7 @@ listar():Observable<Veiculo[]>{
 }
 
 listarPorId(id: number):Observable<Veiculo>{
-  return this.http.get<Veiculo>(`${this.url}/buscar/${id}`)
+  return this.http.get<Veiculo>(`${this.url}//listar-por-id/${id}`)
 }
 salvar(veiculo : Veiculo): Observable<Veiculo>{
   return this.http.post<Veiculo>(this.url + "/salvar", veiculo);
