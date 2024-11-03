@@ -13,6 +13,7 @@ import { VeiculoService } from '../services/veiculo-service';
 export class VeiculoFormComponent implements OnInit {
 
   @Input() veiculo!: Veiculo;
+  @Output() submit: EventEmitter<Veiculo> = new EventEmitter<Veiculo>();
   constructor(
     private formBuilder: FormBuilder,
     private route: Router,
@@ -48,7 +49,8 @@ form!: FormGroup;
     
     };
    
-    
+    this.submit.emit(veiculoData);
+    this.veiculoService.salvar(veiculoData).subscribe()
   }
   }
 
