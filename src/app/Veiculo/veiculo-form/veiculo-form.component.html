@@ -16,3 +16,7 @@
     <button mat-raised-button color ="primary" [disabled] = '!this.form.valid' (click)="onSubmit()">
         Salvar
     </button>
+
+    <button mat-raised-button color ="warn" [disabled] = '!this.form.valid' (click)="onCancel()">
+        Cancelar
+    </button>

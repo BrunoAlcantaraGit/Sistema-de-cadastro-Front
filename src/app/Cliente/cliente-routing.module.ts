@@ -1,9 +1,9 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientesComponent } from './components/clientes/clientes.component';
-import { ClienteCreateComponent } from './components/cliente-create/cliente-create.component';
 import { combineLatest } from 'rxjs';
 import { ClienteUpdateComponent } from './components/cliente-update/cliente-update.component';
+import { ClientesFormComponent } from './components/clientes-form/clientes-form.component';
 
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
 },
 {
     path:'criar',
-    component: ClienteCreateComponent
+    component: ClientesFormComponent
 },
 {
     path:'editar/:id',

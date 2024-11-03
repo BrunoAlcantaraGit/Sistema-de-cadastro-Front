@@ -32,9 +32,9 @@ form!: FormGroup;
 
     this.form = this.formBuilder.group({
      
-      placa: [this.veiculo ? this.veiculo.placa : ''],
-      renavan: [this.veiculo ? this.veiculo.renavan : ''],
-      tipoRodado: [this.veiculo ? this.veiculo.tipoRodado: '']
+      placa: [this.veiculo ? this.veiculo.placa : '', [Validators.required]],
+      renavan: [this.veiculo ? this.veiculo.renavan : '',[Validators.required]],
+      tipoRodado: [this.veiculo ? this.veiculo.tipoRodado: '',[Validators.required]]
       
     });
   }
@@ -51,6 +51,10 @@ form!: FormGroup;
    
     this.submit.emit(veiculoData);
     this.veiculoService.salvar(veiculoData).subscribe()
+  }
+
+  onCancel(){
+    this.route.navigate(['/veiculo'])
   }
   }
 

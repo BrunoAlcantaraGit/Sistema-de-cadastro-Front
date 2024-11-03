@@ -93,6 +93,7 @@ export class ClientesFormComponent implements OnInit {
    
     console.log("Dados a serem enviados:", clienteData); // Exibe os dados que serão enviados
     this.submit.emit(clienteData);
+    this.clienteService.salvar(clienteData).subscribe()
   }
    
 

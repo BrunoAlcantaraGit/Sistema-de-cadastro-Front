@@ -51,9 +51,9 @@
    
 
     <button mat-raised-button color ="primary" [disabled] = '!this.form.valid' (click)="onSubmit()">
-        {{btnText}}
+        Salvar
     </button>
 
-    <button mat-raised-button color ='Warn' (click)="onCancel">
-        cancelar
+    <button mat-raised-button color ="warn" [disabled] = '!this.form.valid' (click)="onCancel()">
+        Cancelar
     </button>

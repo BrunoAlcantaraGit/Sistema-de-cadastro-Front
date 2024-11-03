@@ -9,9 +9,8 @@ import { Veiculo } from '../veiculoModel/veiculo.model';
   providedIn: 'root'
 })
 export class VeiculoService {
-url='http://localhost:8080/cliente'
-enderecoUrl='http://localhost:8080/endereco'
-  
+url='http://localhost:8080/veiculo'
+
 constructor(private http:HttpClient) {}
 
 listar():Observable<Veiculo[]>{
