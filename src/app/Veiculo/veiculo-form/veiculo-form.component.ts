@@ -13,13 +13,18 @@ import { VeiculoService } from '../services/veiculo-service';
 export class VeiculoFormComponent implements OnInit {
 
   @Input() veiculo!: Veiculo;
-  @Output() submit: EventEmitter<Veiculo> = new EventEmitter<Veiculo>();
+  @Output() enviar: EventEmitter<Veiculo> = new EventEmitter<Veiculo>();
+  @Input() btnText!: String;
   constructor(
     private formBuilder: FormBuilder,
     private route: Router,
     private veiculoService: VeiculoService
     
-  ) {}
+  ) {
+    this.btnText = "Salvar"
+  }
+
+
 
 ngOnInit(): void {
   this.criarForm();
@@ -40,20 +45,15 @@ form!: FormGroup;
   }
 
 
-  onSubmit(){
-    const veiculoData: Veiculo = {
-      id: this.form.value.id,
-      placa: this.form.value.placa,
-      renavan: this.form.value.renavan,
-      tipoRodado: this.form.value.tipoRodado
-    
-    };
-   
-    this.submit.emit(veiculoData);
-    console.log("Dados enviados", veiculoData)
-    this.veiculoService.salvar(veiculoData).subscribe()
-  }
+ envio(){
+ 
+    this.enviar.emit(this.form.value);
+    console.log("Dados enviados " + this.form.value);
 
+  } 
+ 
+  
+  
   onCancel(){
     this.route.navigate(['/veiculo'])
   }

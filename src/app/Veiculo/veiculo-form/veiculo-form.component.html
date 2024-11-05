@@ -13,8 +13,8 @@
         <input matInput placeholder="tipoRodado" formControlName='tipoRodado'>
     </mat-form-field>
 
-    <button mat-raised-button color ="primary" [disabled] = '!this.form.valid' (click)="onSubmit()">
-        Salvar
+    <button mat-raised-button color ="primary" [disabled] = '!this.form.valid' (click)="envio()">
+        {{btnText}}
     </button>
 
     <button mat-raised-button color ="warn" (click)="onCancel()">

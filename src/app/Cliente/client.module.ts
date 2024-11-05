@@ -6,6 +6,7 @@ import { ClienteUpdateComponent } from './components/cliente-update/cliente-upda
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { ClienteRoutingModule } from "./cliente-routing.module";
 import { ClientesFormComponent } from './components/clientes-form/clientes-form.component';
+import { ClienteCreateComponent } from './components/cliente-create/cliente-create.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ClientesFormComponent } from './components/clientes-form/clientes-form.
   ClientesReadComponent,
   ClienteUpdateComponent,
   ClientesComponent,
-  ClientesFormComponent
+  ClientesFormComponent,
+  ClienteCreateComponent
   
   ],
   imports: [

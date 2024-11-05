@@ -5,6 +5,7 @@ import { VeiculoComponent } from './veiculo/veiculo.component';
 import { VeiculoFormComponent } from './veiculo-form/veiculo-form.component';
 import { VeiculoReadComponent } from './veiculo-read/veiculo-read.component';
 import { VeiculoUpdateComponent } from './veiculo-update/veiculo-update.component';
+import { VeiculoCreateComponent } from './veiculo-create/veiculo-create.component';
 
 
 
@@ -15,7 +16,7 @@ const routes: Routes = [
   },
   {
       path:'criar',
-      component: VeiculoFormComponent
+      component: VeiculoCreateComponent
   },
 
   {

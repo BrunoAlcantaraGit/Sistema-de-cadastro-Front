@@ -16,7 +16,7 @@ export class VeiculoReadComponent {
    private  veiculoServive: VeiculoService
   ){}
 
-  columnsToDisplay = ['id', 'placa', 'renavan', 'tipoRodado'];
+  columnsToDisplay = ['id', 'placa', 'renavan', 'tipoRodado', 'acoes'];
 
   ngOnInit(): void {
     this.listar();
@@ -24,8 +24,7 @@ export class VeiculoReadComponent {
 }
 
 listar(){
-
-this.veiculoServive.listar().subscribe((sucesso)=>{
+  this.veiculoServive.listar().subscribe((sucesso)=>{
   console.log(sucesso)
   this.veiculos = sucesso
 
@@ -33,7 +32,7 @@ this.veiculoServive.listar().subscribe((sucesso)=>{
 
 }
 
-deletar(id: number){
+deletar(id: number): void{
   this.veiculoServive.deletar(id).subscribe(() => {
     // Remover o cliente deletado do array de clientes
     this.veiculos = this.veiculos.filter(veiculo => veiculo.id !== id);

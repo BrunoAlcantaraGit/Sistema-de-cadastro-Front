@@ -14,15 +14,20 @@ export class ClientesFormComponent implements OnInit {
 
   @Input() btnText!: String;
   @Input() cliente!: Cliente;
-  @Output() submit: EventEmitter<Cliente> = new EventEmitter<Cliente>(); // Adicionado parênteses corretamente
+  @Output() enviar: EventEmitter<Cliente> = new EventEmitter<Cliente>(); // Adicionado parênteses corretamente
   
   form!: FormGroup;
-
+  
   constructor(
     private formBuilder: FormBuilder,
     private route: Router,
     private clienteService: ClienteService // Injetando o serviço de consulta de CEP
-  ) {}
+  ) {
+    this.btnText = "Salvar"
+  }
+
+  
+
 
   ngOnInit(): void {
     this.criarForm();
@@ -70,7 +75,7 @@ export class ClientesFormComponent implements OnInit {
     });
   }
 
-  onSubmit():void{
+  envio():void{
    
     const clienteData: Cliente = {
       id: this.form.value.id,
@@ -92,9 +97,7 @@ export class ClientesFormComponent implements OnInit {
     };
    
     console.log("Dados a serem enviados:", clienteData);
-    this.submit.emit(clienteData);
-  
-    this.clienteService.salvar(clienteData).subscribe()
+    this.enviar.emit(clienteData); 
     
   }
    

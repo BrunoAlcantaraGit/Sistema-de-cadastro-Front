@@ -18,15 +18,15 @@ listar():Observable<Veiculo[]>{
 }
 
 listarPorId(id: number):Observable<Veiculo>{
-  return this.http.get<Veiculo>(`${this.url}//listar-por-id/${id}`)
+  return this.http.get<Veiculo>(`${this.url}/listar-por-id/${id}`)
 }
 salvar(veiculo : Veiculo): Observable<Veiculo>{
   return this.http.post<Veiculo>(this.url + "/salvar", veiculo);
 
 }
 
-atualizar(id:number,veiculo:Veiculo){
-  return this.http.put<Veiculo>(`${this.url}/editar/${id}`,veiculo)
+editarVeiculo(id:number,veiculo:Veiculo){
+  return this.http.put<Veiculo>(`${this.url}/atualizar-veiculo/${id}`,veiculo)
 }
 
 deletar(id:number){

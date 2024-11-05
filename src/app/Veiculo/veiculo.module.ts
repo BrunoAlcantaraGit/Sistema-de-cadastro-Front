@@ -6,6 +6,7 @@ import { VeiculoReadComponent } from './veiculo-read/veiculo-read.component';
 import { SharedModule } from '../shared/shared.module';
 import { VeiculoRoutingModule } from './veiculo-routing.module';
 import { VeiculoUpdateComponent } from './veiculo-update/veiculo-update.component';
+import { VeiculoCreateComponent } from './veiculo-create/veiculo-create.component';
 
 
 
@@ -17,7 +18,8 @@ import { VeiculoUpdateComponent } from './veiculo-update/veiculo-update.componen
     VeiculoComponent,
     VeiculoFormComponent,
     VeiculoReadComponent,
-    VeiculoUpdateComponent
+    VeiculoUpdateComponent,
+    VeiculoCreateComponent
     
   ],
   imports: [

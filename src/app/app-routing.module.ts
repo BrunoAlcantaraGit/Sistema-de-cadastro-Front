@@ -4,7 +4,7 @@ import { HomeComponent } from './shared/components/home/home.component';
 
 const routes: Routes = [
 {
-  path:"",
+  path:"home",
   component: HomeComponent
 },
 {
@@ -14,7 +14,7 @@ const routes: Routes = [
 {
   path: 'veiculo',
   loadChildren: () => import('./Veiculo/veiculo.module').then(m => m.VeiculoModuleModule)
-}
+},
 
 ];
 

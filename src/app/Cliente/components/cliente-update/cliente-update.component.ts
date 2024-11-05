@@ -13,15 +13,13 @@ cliente!: Cliente;
 id!: number;
 btnEditar: String;
 
-constructor(private router: Router,
+constructor(
+  private router: Router,
    private activateRoute: ActivatedRoute, 
    private clienteService: ClienteService 
    ){
 this.btnEditar = "Atualizar"
 }
-
-
-
 
   ngOnInit(): void {
    this.id = Number(this.activateRoute.snapshot.paramMap.get('id'))
