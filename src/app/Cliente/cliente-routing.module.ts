@@ -4,6 +4,7 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 import { combineLatest } from 'rxjs';
 import { ClienteUpdateComponent } from './components/cliente-update/cliente-update.component';
 import { ClientesFormComponent } from './components/clientes-form/clientes-form.component';
+import { ClienteCreateComponent } from './components/cliente-create/cliente-create.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
 },
 {
     path:'criar',
-    component: ClientesFormComponent
+    component: ClienteCreateComponent
 },
 {
     path:'editar/:id',

@@ -75,9 +75,9 @@ export class ClientesFormComponent implements OnInit {
     });
   }
 
-  envio():void{
+  envio(){
    
-    const clienteData: Cliente = {
+    /*const clienteData: Cliente = {
       id: this.form.value.id,
       nome: this.form.value.nome,
       documento: this.form.value.documento,
@@ -94,10 +94,10 @@ export class ClientesFormComponent implements OnInit {
         uf: this.form.value.endereco.uf,
         ibge: this.form.value.endereco.ibge
       }
-    };
+    };*/
    
-    console.log("Dados a serem enviados:", clienteData);
-    this.enviar.emit(clienteData); 
+    console.log("Dados a serem enviados:", this.form.value);
+    this.enviar.emit(this.form.value); // Emitindo o evento para o componente pai
     
   }
    

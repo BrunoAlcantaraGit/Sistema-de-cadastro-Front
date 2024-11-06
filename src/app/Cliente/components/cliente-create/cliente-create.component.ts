@@ -15,7 +15,7 @@ constructor(
 ){}
 
 criarCliente(cliente: Cliente){
-  this.clienteService.salvar(cliente).subscribe((resposta)=>{
+    this.clienteService.salvar(cliente).subscribe((resposta)=>{
     alert("Cliente salvo com sucesso")
     this.router.navigate(['/clientes'])
   })  
