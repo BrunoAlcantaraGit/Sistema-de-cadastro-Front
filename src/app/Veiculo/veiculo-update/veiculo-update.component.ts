@@ -37,6 +37,7 @@ export class VeiculoUpdateComponent {
   atualizarveiculo(veiculo:Veiculo){
     this.veiculoService.editarVeiculo(this.id,veiculo).subscribe(()=>{
       alert("Veículo atualizado com sucesso")
+      this.router.navigate(["/veiculo"])
     })
   }
 

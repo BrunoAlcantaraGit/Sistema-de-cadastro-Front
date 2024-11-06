@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cliente } from '../../models/cliente.model';
 import { Router } from '@angular/router';
 import { ClienteService } from '../../services/cliente.service';
-//import { EnderecoService } from '../../services/endereco.service'; // Importe o serviço que fará a consulta do CEP
+
 
 @Component({
   selector: 'app-clientes-form',
@@ -14,14 +14,14 @@ export class ClientesFormComponent implements OnInit {
 
   @Input() btnText!: String;
   @Input() cliente!: Cliente;
-  @Output() enviar: EventEmitter<Cliente> = new EventEmitter<Cliente>(); // Adicionado parênteses corretamente
+  @Output() enviar: EventEmitter<Cliente> = new EventEmitter<Cliente>(); 
   
   form!: FormGroup;
   
   constructor(
     private formBuilder: FormBuilder,
     private route: Router,
-    private clienteService: ClienteService // Injetando o serviço de consulta de CEP
+    private clienteService: ClienteService 
   ) {
     this.btnText = "Salvar"
   }
@@ -40,7 +40,7 @@ export class ClientesFormComponent implements OnInit {
       nome: [this.cliente ? this.cliente.nome : '',],
       documento: [this.cliente ? this.cliente.documento : '', [Validators.required]],
       
-      contato: this.formBuilder.group({
+        contato: this.formBuilder.group({
         ddd: [this.cliente ? this.cliente.contato?.ddd : ''],
         numeroTelefone: [this.cliente ? this.cliente.contato?.numeroTelefone : ''],
       }),
@@ -59,7 +59,7 @@ export class ClientesFormComponent implements OnInit {
   
   listenToCepChanges(): void {
     this.form.get('endereco.cep')?.valueChanges.subscribe(cep => {
-      if (cep.length === 8) { // Verifica se o CEP tem 8 dígitos
+      if (cep.length === 8) { 
         this.clienteService.buscarEndereco(cep).subscribe(endereco => {
           this.form.patchValue({
             endereco: {
@@ -77,27 +77,8 @@ export class ClientesFormComponent implements OnInit {
 
   envio(){
    
-    /*const clienteData: Cliente = {
-      id: this.form.value.id,
-      nome: this.form.value.nome,
-      documento: this.form.value.documento,
-      contato: {  // Alterado para um objeto, não um array
-        ddd: this.form.value.contato.ddd,
-        numeroTelefone: this.form.value.contato.numeroTelefone
-      },
-      endereco: { // Alterado para um objeto, não um array
-        logradouro: this.form.value.endereco.logradouro,
-        numero: this.form.value.endereco.numero,
-        cep: this.form.value.endereco.cep,
-        bairro: this.form.value.endereco.bairro,
-        localidade: this.form.value.endereco.localidade,
-        uf: this.form.value.endereco.uf,
-        ibge: this.form.value.endereco.ibge
-      }
-    };*/
-   
     console.log("Dados a serem enviados:", this.form.value);
-    this.enviar.emit(this.form.value); // Emitindo o evento para o componente pai
+    this.enviar.emit(this.form.value); 
     
   }
    
