@@ -1,0 +1,11 @@
+<mat-card class="mat-elevation-z4">
+    <mat-card-title>Editar Cliente</mat-card-title>
+    <div *ngIf="veiculo">
+        <app-veiculo-form [veiculo]="veiculo" [btnText] = "btnEditar" (enviar)="atualizarveiculo($event)">
+            
+        </app-veiculo-form>
+
+    </div>
+
+
+</mat-card>
