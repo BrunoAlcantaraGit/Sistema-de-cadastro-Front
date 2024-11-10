@@ -1,6 +1,6 @@
 import { Component,OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { EnvolvidoService } from '../../envolvido.service';
+import { EnvolvidoService } from '../../Service/envolvido.service';
 import { Envolvido } from '../../Model/envolvido.model';
 
 

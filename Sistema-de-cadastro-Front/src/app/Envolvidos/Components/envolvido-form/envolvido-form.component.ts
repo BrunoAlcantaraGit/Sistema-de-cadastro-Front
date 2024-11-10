@@ -3,7 +3,7 @@ import { Component, inject, Input,OnInit,Output, EventEmitter} from '@angular/co
 import {FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {Envolvido} from '../../Model/envolvido.model';
-import { EnvolvidoService } from '../../envolvido.service';
+import { EnvolvidoService } from '../../Service/envolvido.service';
 
 
 @Component({
@@ -26,6 +26,7 @@ constructor(
 
  ngOnInit(): void {
   this.criarFormulario()
+  this.listenToCepChanges();
     
   }
 
@@ -52,6 +53,25 @@ constructor(
       })
     });
   }
+
+  listenToCepChanges(): void {
+    this.form.get('endereco.cep')?.valueChanges.subscribe(cep => {
+      if (cep.length === 8) { 
+        this.envolvidoService.buscarEndereco(cep).subscribe(endereco => {
+          this.form.patchValue({
+            endereco: {
+              logradouro: endereco.logradouro||'',
+              bairro: endereco.bairro||'',
+              localidade:endereco.localidade||'',
+              uf: endereco.uf||'',
+              ibge: endereco.ibge||''
+            }
+          });
+        });
+      }
+    });
+  }
+  
   envio(){
     console.log("Dados enviados " + this.form.value);
     this.enviar.emit(this.form.value)

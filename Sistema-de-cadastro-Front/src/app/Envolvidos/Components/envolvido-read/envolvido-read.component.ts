@@ -1,7 +1,7 @@
 import { Component,Input ,OnInit} from '@angular/core';
 import { Router,RouterLink } from '@angular/router';
 import {MatTableModule} from '@angular/material/table';
-import { EnvolvidoService } from '../../envolvido.service';
+import { EnvolvidoService } from '../../Service/envolvido.service';
 import { Envolvido } from '../../Model/envolvido.model';
 
 
