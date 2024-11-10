@@ -1,6 +1,5 @@
 <form [formGroup]='form'>
     <div>
-
     <mat-form-field>
         <input matInput placeholder="placa" formControlName='placa'>
     </mat-form-field>
@@ -12,7 +11,7 @@
     <mat-form-field>
         <input matInput placeholder="tipoRodado" formControlName='tipoRodado'>
     </mat-form-field>
-
+    
     <button mat-raised-button color ="primary" [disabled] = '!this.form.valid' (click)="envio()">
         {{btnText}}
     </button>
@@ -20,3 +19,5 @@
     <button mat-raised-button color ="warn" (click)="onCancel()">
         Cancelar
     </button>
+
+    <div>

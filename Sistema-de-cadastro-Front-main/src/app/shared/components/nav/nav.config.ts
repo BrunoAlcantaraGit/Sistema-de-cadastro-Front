@@ -20,6 +20,11 @@ export const CONFIG:NavData[] = [
         icon:'local_shipping',
         title:'Veiculo'
     },
+    {
+        routeURL:'/envolvidos',
+        icon:'account_box',
+        title:'Envolvido'
+    }
 
     
 

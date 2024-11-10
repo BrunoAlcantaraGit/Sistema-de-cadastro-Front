@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="veiculos">
+<table mat-table [dataSource]="veiculos" class="mat-elevation-z8">
     ...
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -38,7 +38,6 @@
       </ng-container>
 
       
-
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
       <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
 

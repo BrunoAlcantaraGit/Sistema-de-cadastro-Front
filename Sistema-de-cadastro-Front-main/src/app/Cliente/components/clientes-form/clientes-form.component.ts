@@ -35,7 +35,7 @@ export class ClientesFormComponent implements OnInit {
   }
 
   criarForm():void{
-    this.form = this.formBuilder.group({
+      this.form = this.formBuilder.group({
      
       nome: [this.cliente ? this.cliente.nome : '',],
       documento: [this.cliente ? this.cliente.documento : '', [Validators.required]],
@@ -45,7 +45,7 @@ export class ClientesFormComponent implements OnInit {
         numeroTelefone: [this.cliente ? this.cliente.contato?.numeroTelefone : ''],
       }),
 
-      endereco: this.formBuilder.group({
+        endereco: this.formBuilder.group({
         logradouro: [this.cliente ? this.cliente.endereco?.logradouro : ''],
         numero: [this.cliente ? this.cliente.endereco?.numero : ''],
         cep: [this.cliente ? this.cliente.endereco?.cep : '', [Validators.required]], // Validar o CEP

@@ -16,6 +16,11 @@ const routes: Routes = [
   loadChildren: () => import('./Veiculo/veiculo.module').then(m => m.VeiculoModuleModule)
 },
 
+{
+  path: 'envolvidos',
+  loadChildren: () => import('./Envolvidos/envolvido.module').then(m => m.EnvolvidoModuleModule)
+},
+
 ];
 
 @NgModule({
