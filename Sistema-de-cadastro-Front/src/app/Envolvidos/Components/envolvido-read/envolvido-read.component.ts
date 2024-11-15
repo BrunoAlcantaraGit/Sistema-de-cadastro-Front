@@ -1,6 +1,4 @@
 import { Component,Input ,OnInit} from '@angular/core';
-import { Router,RouterLink } from '@angular/router';
-import {MatTableModule} from '@angular/material/table';
 import { EnvolvidoService } from '../../Service/envolvido.service';
 import { Envolvido } from '../../Model/envolvido.model';
 
@@ -14,7 +12,7 @@ export class EnvolvidoReadComponent implements OnInit {
 
   envolvidos!: Envolvido[];
 
-  columnsToDisplay:string [] = ['id','nome', 'documento', 'acoes'];
+  columnsToDisplay:string [] = ['nome', 'documento','logradouro', 'acoes',];
 
   constructor(
     private envolvidoService: EnvolvidoService,
@@ -26,6 +24,15 @@ export class EnvolvidoReadComponent implements OnInit {
   }
 
   listar(): void {
+  this.envolvidoService.ListarTudo().subscribe((sucesso) => {
+    console.log(sucesso);
+    this.envolvidos = sucesso;
+  })
+}
 
+deletar(id: number): void{
+  this.envolvidoService.deletarPorId(id).subscribe(() => {
+    this.envolvidos = this.envolvidos.filter(envolvidos => envolvidos.id !== id);
+  })
 }
 }

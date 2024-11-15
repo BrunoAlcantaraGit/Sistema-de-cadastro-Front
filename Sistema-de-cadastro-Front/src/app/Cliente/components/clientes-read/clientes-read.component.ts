@@ -15,7 +15,8 @@ export class ClientesReadComponent implements OnInit {
     private clienteService: ClienteService
   ){}
   
-  displayedColumns: string[] = ['id', 'nome', 'documento','acoes'];
+  displayedColumns: string[] = ['nome', 'documento','logradouro', 'acoes'];
+  
   ngOnInit(): void {
     this.listar();
   }

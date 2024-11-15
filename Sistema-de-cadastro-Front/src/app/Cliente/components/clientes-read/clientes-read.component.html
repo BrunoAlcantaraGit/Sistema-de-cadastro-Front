@@ -1,11 +1,7 @@
 <table mat-table [dataSource]="clientes" class="mat-elevation-z8">
 
     
-  <ng-container matColumnDef="id"> 
-    <th mat-header-cell *matHeaderCellDef>ID.</th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-  </ng-container>
-  
+
     
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> Nome </th>
@@ -17,6 +13,13 @@
       <th mat-header-cell *matHeaderCellDef>Documento</th>
       <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
     </ng-container>
+
+
+    <ng-container matColumnDef="logradouro"> 
+      <th mat-header-cell *matHeaderCellDef>logradouro</th>
+      <td mat-cell *matCellDef="let element"> {{element.endereco?.logradouro}} </td>
+    </ng-container>
+    
 
 
     <ng-container matColumnDef="acoes">

@@ -15,6 +15,7 @@ import { EnvolvidoService } from '../../Service/envolvido.service';
 export class EnvolvidoFormComponent implements OnInit{
 
 @Input() envolvido!:Envolvido
+@Output()btnText!: String
 @Output() enviar: EventEmitter<Envolvido> = new EventEmitter<Envolvido>();
 
 form!: FormGroup;
@@ -22,7 +23,9 @@ constructor(
   private fomrBuilder: FormBuilder,
   private envolvidoService: EnvolvidoService,
   private router: Router
-){}
+){
+  this.btnText = "Salvar"
+}
 
  ngOnInit(): void {
   this.criarFormulario()

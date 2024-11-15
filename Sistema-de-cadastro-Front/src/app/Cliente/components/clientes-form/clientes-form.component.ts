@@ -21,7 +21,9 @@ export class ClientesFormComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route: Router,
-    private clienteService: ClienteService 
+    private clienteService: ClienteService,
+    
+    
   ) {
     this.btnText = "Salvar"
   }
@@ -76,9 +78,11 @@ export class ClientesFormComponent implements OnInit {
   }
 
   envio(){
-   
+
+    this.form.get('documento')?.enable();
     console.log("Dados a serem enviados:", this.form.value);
     this.enviar.emit(this.form.value); 
+    this.form.get('documento')?.disable();
     
   }
    

@@ -13,3 +13,8 @@ mat-form-field{
 width: 400px;
 margin-right: 30px;
 }
+
+.desabilitado {
+    background-color: #f5f5f5; /* Fundo opaco */
+    cursor: not-allowed; /* Cursor indicando que não é editável */
+  }

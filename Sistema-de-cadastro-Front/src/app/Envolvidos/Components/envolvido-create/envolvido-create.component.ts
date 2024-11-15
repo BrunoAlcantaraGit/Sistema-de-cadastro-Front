@@ -18,7 +18,11 @@ export class EnvolvidoCreateComponent {
 
 
   criarEnvolvido(envolvido: Envolvido){
-    console.log(this.envolvido)
+  
+      this.envolvidoService.salvarEnvolvido(envolvido).subscribe(envolvido => {
+      window.alert('Envolvido cadastrado com sucesso!')
+      this.router.navigate(['envolvidos'])
+    })
 
   }
 }

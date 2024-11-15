@@ -16,7 +16,7 @@ export class VeiculoReadComponent {
    private  veiculoServive: VeiculoService
   ){}
 
-  columnsToDisplay = ['id', 'placa', 'renavan', 'tipoRodado', 'acoes'];
+  columnsToDisplay = ['placa', 'renavan', 'tipoRodado', 'acoes'];
 
   ngOnInit(): void {
     this.listar();

@@ -1,1 +1,7 @@
-<p>envolvido-update works!</p>
+<mat-card class="mat-elevation-z4">
+    <mat-card-title>Editar envolvido</mat-card-title>
+    <div *ngIf="envolvido">
+        <app-envolvido-form [envolvido]="envolvido" btnText="Atualizar" (enviar)="atualizarEnvolvido($event)"></app-envolvido-form>
+    </div>
+    
+</mat-card>

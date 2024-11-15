@@ -25,7 +25,9 @@ this.btnEditar = "Atualizar"
    this.id = Number(this.activateRoute.snapshot.paramMap.get('id'))
    this.listarPorId(this.id);
   }
-  listarPorId(id:number): void{
+
+  
+  listarPorId(id:number):void{
     this.clienteService.listarPorId(id).subscribe(retorno =>{
     this.cliente = retorno
    
